@@ -1,0 +1,28 @@
+application:
+  subdomain: rtorrent
+  background_task: true
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://rutorrent:80/
+  ingress:
+    - protocol: tcp
+      port: 5000
+      service: rutorrent
+    - protocol: tcp
+      port: 51413
+      service: rutorrent
+    - protocol: udp
+      port: 6881
+      service: rutorrent
+services:
+  rutorrent:
+    # upstream: linuxserver/rutorrent:latest
+    image: docker.1ms.run/linuxserver/rutorrent:latest@sha256:69b28c66fa8e488748e3dd5eba22c11d8faa038cc20d7e7c2d419d666e426b2a
+    environment:
+      - PUID=1000
+      - PGID=1000
+    binds:
+      - /lzcapp/var/config:/config
+      - /lzcapp/var/downloads:/downloads

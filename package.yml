@@ -1,0 +1,17 @@
+package: cloud.lazycat.app.rtorrent
+version: 3.21.0
+name: RTorrent
+description: "一个 BitTorrent 客户端"
+min_os_version: "1.5.0"
+homepage: https://github.com/rakshasa/rtorrent
+author: rakshasa
+unsupported_platforms:
+  - ios
+  - android
+locales:
+  zh:
+    description: "一个 BitTorrent 客户端"
+    name: RTorrent
+  en:
+    description: "A BitTorrent client"
+    name: RTorrent
