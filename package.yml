@@ -1,4 +1,5 @@
 package: cloud.lazycat.app.rtorrent
+license: GPL-2.0
 version: 3.21.0
 name: RTorrent
 description: "一个 BitTorrent 客户端"
